@@ -14,7 +14,7 @@ class BaseAppSettings(BaseSettings):
     db_url: str = Field(default="sqlite:///default.db")
     tags: List[str] = Field(default_factory=list)
     session_token: str = Field(default_factory=lambda: str(uuid4()))
-    started_at: datetime = Field(default_factory=datetime.utcnow)
+    started_at: datetime = Field(default_factory=datetime.now)
 
     class Config:
         env_file_encoding = "utf-8"
